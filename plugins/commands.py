@@ -19,9 +19,7 @@ logger = logging.getLogger(__name__)
 BATCH_FILES = {}
 
 @Client.on_message(filters.command("start") & filters.incoming)
-    sticker_message = await message.reply_sticker("CAACAgUAAxkBAAEMvQ9m0tXXcCr2ss_b0VcZbhPo-hqMjwACmgADyJRkFCxl4eFc7yVqNQQ")
-    await asyncio.sleep(2)
-    await sticker_message.delete()
+    sticker_message = await 
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[
