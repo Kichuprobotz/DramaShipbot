@@ -19,10 +19,10 @@ logger = logging.getLogger(__name__)
 BATCH_FILES = {}
 
 @Client.on_message(filters.command("start") & filters.incoming)
-async def start(client, message):
-        sticker_message = await message.reply_sticker("CAACAgUAAxkBAAEMvQ9m0tXXcCr2ss_b0VcZbhPo-hqMjwACmgADyJRkFCxl4eFc7yVqNQQ")
+    sticker_message = await message.reply_sticker("CAACAgUAAxkBAAEMvQ9m0tXXcCr2ss_b0VcZbhPo-hqMjwACmgADyJRkFCxl4eFc7yVqNQQ")
     await asyncio.sleep(2)
     await sticker_message.delete()
+async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[
                     InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ ➕', url=f"http://t.me/{temp.U_NAME}?startgroup=true")
