@@ -33,6 +33,9 @@ async def start(client, message):
                     InlineKeyboardButton('ɪɴʟɪɴᴇ ꜱᴇᴀʀᴄʜ', switch_inline_query_current_chat='')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        msg = await message.reply_sticker(CAACAgUAAxkBAAEMvjtm1Dx82zDGzSBwiiquwOH2Z9TqBAACjxAAAshNmVYFPD4yDH_fnjUE)
+await asyncio.sleep(5)
+await msg.delete()
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
         await asyncio.sleep(2)
         if not await db.get_chat(message.chat.id):
